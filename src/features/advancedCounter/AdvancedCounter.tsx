@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
-import { useGetPokemonByNameQuery } from '../../app/services/pokemon'
-
-type Pokemon = {
-    name: string
-    pollingInterval: number
-}
+import React from 'react'
+import { useGetPokemonByIdQuery } from '../../app/services/pokemon'
+import { pokemonIdType } from '../../assets/types/pokemonTypes'
+import { useAppDispatch, useAppSelector } from '../../app/advancedStore'
+import {
+    increment,
+    decrement,
+    incrementByAmount,
+    selectCount
+} from './advancedCounterSlice'
 
 const AdvanceCounter = () => {
-    const pokemon = ['bulbasaur', 'pikachu', 'ditto', 'bulbasaur']
-    const [pollingInterval, setPollingInterval] = useState(0)
-    
-    const RenderPokemons = ({ name, pollingInterval}: Pokemon) => {
-        const { data, error, isLoading, isFetching } = useGetPokemonByNameQuery(name, { pollingInterval })
-        return(
-            <div key={name}>
+    const pokemonCount = useAppSelector(selectCount)
+    const dispatch = useAppDispatch()
+
+    const RenderPokemonsById = ({ id }: pokemonIdType) => {
+        const { data, error, isLoading, isFetching } = useGetPokemonByIdQuery(id)
+        return (
+            <div key={id}>
             {error ? (
                 <>Oh no, there was an error</>
             ) : isLoading ? (
@@ -29,19 +32,30 @@ const AdvanceCounter = () => {
             </div>
         )
     }
+
     return (
         <div>
             <p>Advanced Counter</p>
-            <select
-                onChange={(e) => setPollingInterval(Number(e.target.value))}
-            >
-                <option value={0}>Off</option>
-                <option value={1000}>1s</option>
-                <option value={5000}>5s</option>
-                <option value={10000}>10s</option>
-            </select>
-            {pokemon.map((poke, index) => (
-                <RenderPokemons key={index} name={poke} pollingInterval={pollingInterval}/>
+            <div>
+                <button
+                    onClick={() => dispatch(increment())}
+                >
+                    +
+                </button>
+                <span>{pokemonCount}</span>
+                <button
+                    onClick={() => dispatch(decrement())}
+                >
+                    -
+                </button>
+                <button
+                    onClick={(e) => dispatch(incrementByAmount(pokemonCount))}
+                >
+                    Add {pokemonCount}
+                </button>
+            </div>
+            {Array(pokemonCount).fill(1).map((_, i) => (
+                <RenderPokemonsById key={i} id={i + 1}/>
             ))}
         </div>
     )

@@ -13,7 +13,6 @@ const root = createRoot(container)
 
 root.render(
   <React.StrictMode>
-
     {/* <Provider store={oldCounterStore}> */}
     {/* <Provider store={newCounterStore}> */}
     <Provider store={advancedStore}>

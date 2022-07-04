@@ -1,3 +1,3 @@
-import { IPokemon } from "../interfaces/advanceCounterInterface";
-
-export type PokemonType = IPokemon[]
+export type pokemonIdType = {
+    id: number
+}

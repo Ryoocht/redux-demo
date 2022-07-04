@@ -1,12 +1,14 @@
 import { api } from './api'
-import { PokemonType } from '../../assets/types/pokemonTypes'
 
 export const pokemonApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getPokemonByName: builder.query({
             query: (name: string) => `pokemon/${name}`,
         }),
+        getPokemonById: builder.query({
+            query: (id: number) => `pokemon/${id}`,
+        })
     })
 })
 
-export const { useGetPokemonByNameQuery } = pokemonApi
+export const { useGetPokemonByNameQuery, useGetPokemonByIdQuery } = pokemonApi

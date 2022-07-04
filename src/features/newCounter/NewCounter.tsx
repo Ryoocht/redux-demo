@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useAppSelector, useAppDispatch } from './newCounterHook'
 import { 
     selectCount, 
@@ -10,9 +10,6 @@ import {
 const NewCounter = () => {
     const count = useAppSelector(selectCount)
     const dispatch = useAppDispatch()
-    const [incrementAmount, setIncrementAmount] = useState('2')
-
-    const incrementValue = Number(incrementAmount) || 0
     
     return (
         <div>
