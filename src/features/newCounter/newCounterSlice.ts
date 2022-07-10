@@ -22,8 +22,7 @@ export const counterSlice = createSlice({
         incrementByAmount: (state, action: PayloadAction<number>) => {
             state.value += action.payload
         }
-    },
-    // write extrareducers here
+    }
 })
 
 export const selectCount = (state: RootState) => state.counter.value
