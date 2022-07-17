@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { oldCounterStore } from './features/oldCounter/oldCounterStore'
 import { newCounterStore } from './features/newCounter/newCounterStore'
 import { advancedStore } from './app/advancedStore'
+import { authStore } from './app/authStore'
 import App from './App'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
@@ -16,6 +17,7 @@ root.render(
     {/* <Provider store={oldCounterStore}> */}
     {/* <Provider store={newCounterStore}> */}
     <Provider store={advancedStore}>
+    {/* <Provider store={authStore}> */}
       <App />
     </Provider>
   </React.StrictMode>

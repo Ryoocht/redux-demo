@@ -10,6 +10,7 @@ const App = () => {
       {/* <OldCounter /> */}
       {/* <NewCounter /> */}
       <AdvancedCounter />
+      
     </div>
   )
 }
