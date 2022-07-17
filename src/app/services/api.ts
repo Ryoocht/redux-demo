@@ -16,5 +16,7 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 6 })
 export const api = createApi({
     reducerPath: 'pokemonApi',
     baseQuery: baseQueryWithRetry,
+    tagTypes: ['Pokemons', 'Users', 'Posts'],
+    keepUnusedDataFor: 0,
     endpoints: () => ({}),
 })

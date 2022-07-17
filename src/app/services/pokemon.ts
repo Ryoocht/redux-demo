@@ -7,7 +7,7 @@ export const pokemonApi = api.injectEndpoints({
         }),
         getPokemonById: builder.query({
             query: (id: number) => `pokemon/${id}`,
-        })
+        }),
     })
 })
 
