@@ -28,3 +28,12 @@ export const incrementByAmountCount = (amount: number) => {
         })
     }
 }
+
+export const addFreeNumber = (amount: number) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.ADD_FREE_NUMBER,
+            payload: amount
+        })
+    }
+}

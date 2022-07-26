@@ -1,39 +1,93 @@
+p {
+  margin: 0;
+}
+
 .App {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.counter_title {
+  font-size: 1.8em;
+  font-weight: 700;
+  padding: .7em 0;
+  color: #960018;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.counter_container {
+  width: 7em;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 1em auto;
+  padding: 0 1em;
+  border-radius: 30px;
+  border: 1px solid black;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.counter_btn {
+  background: none;
+  border: none;
+  font-size: 1.7em;
+  cursor: pointer;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.count {
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.counter_extra_container {
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.counter_multiply {
+  width: 7em;
+  background-color: #7CB9E8;
+  border-radius: 10px;
+  padding: .5em .8em;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.counter_free_text {
+  width: 7em;
+  background-color: #7CB9E8;
+  display: flex;
+  border-radius: 10px;
+  padding: .5em .8em;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.free_text_input {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background-color: #7CB9E8;
+  color: white;
+  font-size: 1.1em;
+  margin-left: .5em;
+}
+
+.total_price_container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ed1c24;
+  width: 10em;
+  margin: 1em auto;
+  padding: 1em 1.5em;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: white;
 }
