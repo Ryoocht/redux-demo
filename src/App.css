@@ -91,3 +91,27 @@ p {
   font-size: 1.1em;
   color: white;
 }
+
+.option_container {
+  width: 20em;
+  margin: 0 auto;
+  font-size: 1.1em;
+  padding: .5em 1em;
+}
+
+.option_row {
+  display: flex;
+  margin: .5em 0;
+}
+
+.option_checkbox {
+  width: 10%;
+  cursor: pointer;
+}
+
+
+.option_title_box {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}

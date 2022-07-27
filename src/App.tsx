@@ -8,8 +8,8 @@ const App = () => {
   return (
     <div className="App">
       {/* <OldCounter /> */}
-      <NewCounter />
-      {/* <AdvancedCounter /> */}
+      {/* <NewCounter /> */}
+      <AdvancedCounter />
     </div>
   )
 }
