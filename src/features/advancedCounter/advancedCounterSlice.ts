@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 import { RootState } from "../../app/advancedStore"
 
 interface CounterState {
@@ -19,12 +19,9 @@ export const pokemonCounterSlice = createSlice({
         decrement: (state) => {
             state.count -= 1
         },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
-            state.count += action.payload
-        }
     }
 })
 
 export const selectCount = ( state: RootState ) => state.pokemonCounter.count
-export const { increment, decrement, incrementByAmount } = pokemonCounterSlice.actions
+export const { increment, decrement } = pokemonCounterSlice.actions
 export default pokemonCounterSlice.reducer

@@ -34,8 +34,8 @@ const NewCounter = () => {
             <p className='counter_title'>New Counter</p>
             <div className='counter_container'>
                 <button
-                onClick={() => dispatch(decrement())}
-                className='counter_btn'
+                    onClick={() => dispatch(decrement())}
+                    className='counter_btn'
                 >
                 -
                 </button>
@@ -43,8 +43,8 @@ const NewCounter = () => {
                     {count}
                 </span>
                 <button
-                onClick={() => dispatch(increment())}
-                className='counter_btn'
+                    onClick={() => dispatch(increment())}
+                    className='counter_btn'
                 >
                 +
                 </button>
